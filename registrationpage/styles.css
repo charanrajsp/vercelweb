@@ -1,0 +1,79 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Form Container */
+form {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+/* Form Title */
+form h2 {
+    margin-bottom: 1.5rem;
+    color: #333333;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Input Fields */
+form input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+/* Input Field Focus */
+form input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Submit Button */
+form button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover Effect for Button */
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    form {
+        padding: 1.5rem;
+    }
+    form h2 {
+        font-size: 1.25rem;
+    }
+    form input,
+    form button {
+        font-size: 0.9rem;
+    }
+}
