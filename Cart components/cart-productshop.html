@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h2>Shopping Cart</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Size</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Manually added cart items -->
+                <tr>
+                    <td>Red T-shirt</td>
+                    <td>$15.00</td>
+                    <td>
+                        <select class="form-control form-control-sm">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                            <option>XL</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="form-control form-control-sm" value="1" min="1"></td>
+                    <td>$15.00</td>
+                    <td><button class="btn btn-danger btn-sm">Remove</button></td>
+                </tr>
+                <tr>
+                    <td>Blue Jeans</td>
+                    <td>$40.00</td>
+                    <td>
+                        <select class="form-control form-control-sm">
+                            <option>28</option>
+                            <option>30</option>
+                            <option>32</option>
+                            <option>34</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="form-control form-control-sm" value="1" min="1"></td>
+                    <td>$40.00</td>
+                    <td><button class="btn btn-danger btn-sm">Remove</button></td>
+                </tr>
+                <tr>
+                    <td>Black Hoodie</td>
+                    <td>$25.00</td>
+                    <td>
+                        <select class="form-control form-control-sm">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                            <option>XL</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="form-control form-control-sm" value="1" min="1"></td>
+                    <td>$25.00</td>
+                    <td><button class="btn btn-danger btn-sm">Remove</button></td>
+                </tr>
+                <tr>
+                    <td>White Sneakers</td>
+                    <td>$50.00</td>
+                    <td>
+                        <select class="form-control form-control-sm">
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="form-control form-control-sm" value="1" min="1"></td>
+                    <td>$50.00</td>
+                    <td><button class="btn btn-danger btn-sm">Remove</button></td>
+                </tr>
+                <tr>
+                    <td>Green Cap</td>
+                    <td>$10.00</td>
+                    <td>
+                        <select class="form-control form-control-sm">
+                            <option>One Size</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="form-control form-control-sm" value="1" min="1"></td>
+                    <td>$10.00</td>
+                    <td><button class="btn btn-danger btn-sm">Remove</button></td>
+                </tr>
+                <tr>
+                    <td>Yellow Dress</td>
+                    <td>$35.00</td>
+                    <td>
+                        <select class="form-control form-control-sm">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="form-control form-control-sm" value="1" min="1"></td>
+                    <td>$35.00</td>
+                    <td><button class="btn btn-danger btn-sm">Remove</button></td>
+                </tr>
+                <tr>
+                    <td>Leather Jacket</td>
+                    <td>$70.00</td>
+                    <td>
+                        <select class="form-control form-control-sm">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                            <option>XL</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="form-control form-control-sm" value="1" min="1"></td>
+                    <td>$70.00</td>
+                    <td><button class="btn btn-danger btn-sm">Remove</button></td>
+                </tr>
+                <tr>
+                    <td>Sports Shoes</td>
+                    <td>$60.00</td>
+                    <td>
+                        <select class="form-control form-control-sm">
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                        </select>
+                    </td>
+                    <td><input type="number" class="form-control form-control-sm" value="1" min="1"></td>
+                    <td>$60.00</td>
+                    <td><button class="btn btn-danger btn-sm">Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Coupon and Order Summary -->
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Enter Coupon Code" id="coupon-code">
+                    <button class="btn btn-success" type="button" id="apply-coupon">Apply</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Order Summary</h5>
+                        <p class="card-text">Total: $<span id="total-amount">305.00</span></p>
+                        <button class="btn btn-primary btn-block">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+  <!--   Dynamic Code Rendring
+    <script>
+        fetch('http://localhost:5000/cart/get-cart') 
+            .then(response => response.json())
+            .then(cartItems => {
+                const cartItemsElement = document.getElementById('cart-items');
+                const totalAmountElement = document.getElementById('total-amount');
+
+                let totalAmount = 0;
+
+                cartItems.forEach(item => {
+                    const row = document.createElement('tr');
+
+                    row.innerHTML = `
+                        <td>${item.product.name}</td>
+                        <td>$${item.product.price.toFixed(2)}</td>
+                        <td>${item.quantity}</td>
+                        <td>$${(item.product.price * item.quantity).toFixed(2)}</td>
+                        <td><button class="btn btn-danger btn-sm">Remove</button></td> 
+                    `;
+
+                    cartItemsElement.appendChild(row);
+
+                    totalAmount += item.product.price * item.quantity;
+                });
+
+                totalAmountElement.textContent = totalAmount.toFixed(2);
+            })
+            .catch(error => {
+                console.error('Error fetching cart items:', error);
+            });
+    </script> -->
+    <!-- Manual Code-->
+
+
